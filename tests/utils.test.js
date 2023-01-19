@@ -1,4 +1,4 @@
-const { formatSnack } = require('../utils');
+const { formatSnack } = require('../db/utils');
 
 describe('formatSnack()', () => {
   // --->

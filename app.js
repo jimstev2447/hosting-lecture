@@ -1,5 +1,5 @@
 const app = require('express')();
-const { getSnacks } = require('./controllers.js');
+const { getSnacks } = require('./controllers/controllers');
 
 app.get('/api/snacks', getSnacks);
 

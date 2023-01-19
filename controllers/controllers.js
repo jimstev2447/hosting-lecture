@@ -1,4 +1,4 @@
-const { fetchSnacks, fetchCategoryById } = require('../models.js');
+const { fetchSnacks, fetchCategoryById } = require('../models/models');
 
 exports.getSnacks = (req, res, next) => {
   const { category_id } = req.query;
