@@ -1,6 +1,6 @@
 const db = require('../db/connection');
 
-exports.fetchSnacks = (category_id) => {
+exports.fetchSnacks = (category_id = '*') => {
   const query = `
     SELECT * FROM snacks
     WHERE snacks.category_id=$1
