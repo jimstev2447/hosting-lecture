@@ -1,11 +1,13 @@
 const db = require('../db/connection');
 
-exports.fetchSnacks = (category_id = '*') => {
-  const query = `
-    SELECT * FROM snacks
-    WHERE snacks.category_id=$1
-    `;
-  return db.query(query, [category_id]).then(({ rows }) => {
+exports.fetchSnacks = (category_id) => {
+  let query = `SELECT * FROM snacks`;
+  const queryValues = [];
+  if (category_id) {
+    query += `WHERE snacks.category_id=$1`;
+    queryValues.push(category_id);
+  }
+  return db.query(query, queryValues).then(({ rows }) => {
     return rows;
   });
 };
