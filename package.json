@@ -2,11 +2,13 @@
   "name": "sql-nov-2022",
   "version": "1.0.0",
   "description": "",
-  "main": "connection.js",
+  "main": "listen.js",
   "scripts": {
     "test": "PGDATABASE=nc_snacks jest",
     "setup-db": "psql -f ./data/setup-db.sql",
-    "seed-db": "PGDATABASE=nc_snacks node run-seed.js"
+    "seed-db": "PGDATABASE=nc_snacks node run-seed.js",
+    "seed-production": "NODE_ENV=production node ./db/run-seed.js",
+    "start": "node listen.js"
   },
   "author": "",
   "license": "ISC",

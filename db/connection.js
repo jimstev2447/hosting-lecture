@@ -6,12 +6,21 @@ require('dotenv').config({
 });
 const { Pool } = require('pg');
 
-if (process.env.PGDATABASE === undefined) {
-  throw new Error('no PGDATABSE set');
+if (
+  process.env.PGDATABASE === undefined &&
+  process.env.DATABASE_URL === undefined
+) {
+  throw new Error('no PGDATABSE or URL set');
 }
 
-const connection = new Pool({
-  database: process.env.PGDATABASE,
-});
+const config =
+  ENV === 'production'
+    ? {
+        connectionString: process.env.DATABASE_URL,
+        max: 2,
+      }
+    : {};
+
+const connection = new Pool(config);
 
 module.exports = connection;
