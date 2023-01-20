@@ -40,9 +40,13 @@ jobs:
 
       - name: Use postgreSQL
         uses: harmon758/postgresql-action@v1
+        with:
+          postgresql db: 'my_db'
+          postgresql user: 'testyMcTesterson'
+          postgresql password: 'secretPassword'
 
       - name: Install Dependencies
         run: npm i
 
       - name: Run Integreation Tests
-        run: npm t app
+        run: PGDATABASE=my_db PGUSER=testyMcTesterson PGPASSWORD=secretPassword npm t app
