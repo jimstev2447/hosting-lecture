@@ -1,0 +1,12 @@
+name: Run Tests
+
+on:
+  - pull-request
+
+jobs:
+  say-hello:
+    name: say-hello
+    runs-on: ubuntu-latest
+    steps:
+      - name: sayHello
+        uses: 'echo hello-students'
