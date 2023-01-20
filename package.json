@@ -4,9 +4,9 @@
   "description": "",
   "main": "listen.js",
   "scripts": {
-    "test": "PGDATABASE=nc_snacks jest",
+    "test": "jest",
     "setup-db": "psql -f ./data/setup-db.sql",
-    "seed-db": "PGDATABASE=nc_snacks node run-seed.js",
+    "seed-db": "node run-seed.js",
     "seed-production": "NODE_ENV=production node ./db/run-seed.js",
     "start": "node listen.js"
   },

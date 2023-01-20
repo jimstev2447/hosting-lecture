@@ -27,3 +27,22 @@ jobs:
 
       - name: Run unit tests
         run: npm t utils
+
+  e2e-tests:
+    name: end to end testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+
+      - name: Use postgreSQL
+        uses: harmon758/postgresql-action@v1
+
+      - name: Install Dependencies
+        run: npm i
+
+      - name: Run Integreation Tests
+        run: npm t app
