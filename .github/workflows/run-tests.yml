@@ -10,5 +10,4 @@ jobs:
     name: say-hello
     runs-on: ubuntu-latest
     steps:
-      - name: sayHello
-        uses: 'echo hello-students'
+      - run: 'echo hello students'
