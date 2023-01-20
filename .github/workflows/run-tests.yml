@@ -1,7 +1,9 @@
 name: Run Tests
 
 on:
-  - pull-request
+  push:
+    branches:
+      - main
 
 jobs:
   say-hello:
